@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Form from './comps/Form'
+import './App.css'
 
 function App() {
 
@@ -7,7 +8,7 @@ function App() {
     const [values, setValues] = useState({name: '', email: '', role: ''})
 
 
-    
+
   const onSubmit = () => {
     setMembers([values, ...members])
     setValues({name: '', email: '', role: ''})
@@ -20,18 +21,22 @@ function App() {
   return (
     <div className="App">
         <h1>TEAM MEMBERS</h1>
+        <div className='formBox'>
         <Form
           values={values}
-          change={onChange}
+          update={onChange}
           submit={onSubmit}
         />
         {members.map((member, idx) => {
           return (
             <div key={idx}>
-              {member.email}, {member.name}, {member.role}
+              <p>{member.name}</p>
+              <p>{member.email}</p> 
+              <p>{member.role}</p>
             </div>
           )
         })}
+      </div>
     </div>
   );
 }

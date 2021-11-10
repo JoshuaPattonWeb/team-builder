@@ -21,7 +21,8 @@ const Form = (props) => {
 
     return(
         <form className='form' onSubmit={onSubmit}>
-            <label>Name
+            <div className='name'>
+            <label>Name: 
             <input
                 placeholder='name'
                 value={props.values.name}
@@ -29,7 +30,9 @@ const Form = (props) => {
                 onChange={onChange}
                 />
             </label>
-            <label>Email
+            </div>
+            <div className='email'>
+            <label>Email: 
                 <input
                 placeholder='Enter your email here!'
                 value={props.values.email}
@@ -37,7 +40,9 @@ const Form = (props) => {
                 onChange={onChange}
              />
             </label>
-            <label>Role
+            </div>
+            <div className='role'>
+            <label>Role: 
              <select value={values.role} name='role' onChange={onChange}>
              <option value="">-- Select a Role --</option>
              <option value="FrontEnd">FrontEnd</option>
@@ -45,6 +50,7 @@ const Form = (props) => {
              <option value="Confused">Confused</option>
              </select>
             </label>
+            </div>
             <div className='submit'>
                 <button disabled={!values.name || !values.email || !values.role}>SUBMIT</button>
             </div>
